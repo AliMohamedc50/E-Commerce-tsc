@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom"
 import HeaderBasket from "@components/eCommerce/HeaderBasket/HeaderBasket";
 
-
 import { Badge, Container, Nav, Navbar } from "react-bootstrap";
 import style from "./Styles.module.css" ;
 
@@ -22,7 +21,7 @@ function Header() {
             <Nav className="me-auto">
                 <Nav.Link as={NavLink} to="/">Home</Nav.Link>
                 <Nav.Link as={NavLink} to="Categories">Categories</Nav.Link>
-                <Nav.Link as={NavLink} to="Products:s">Products</Nav.Link>
+                <Nav.Link as={NavLink} to="products/55">Products</Nav.Link>
                 <Nav.Link as={NavLink} to="about-us">AboutUs</Nav.Link>
             </Nav>
             <Nav >
