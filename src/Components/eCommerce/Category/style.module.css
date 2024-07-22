@@ -1,0 +1,20 @@
+.category {
+    width: 150px;
+    height: 150px;
+}
+
+.categoryImg {
+    background-color: #859db2;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.categoryImg img {
+    width: 100%;
+}
+
+.categoryTitle {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
