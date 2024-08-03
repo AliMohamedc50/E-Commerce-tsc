@@ -1,8 +1,10 @@
+import GridList from "@components/common/GridList/GridList"
 import { Category } from "@components/eCommerce"
+import Loading from "@components/feedback/Loading/Loading"
 import { actGetCategories } from "@store/categories/categoriesSlice"
 import { useAppDispatch, useAppSelector } from "@store/hook"
 import { useEffect } from "react"
-import { Col, Container, Row } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 
 function Categories() {
   const dispatch = useAppDispatch()
@@ -10,19 +12,16 @@ function Categories() {
   const {loading, error, records} = useAppSelector(state => state.categoriesSlice)
 
   useEffect(()=> {
-    dispatch(actGetCategories())
+    if (!records.length){
+      dispatch(actGetCategories())
+    }
   },[dispatch])
 
-  const categoriesList = records.length > 0 ? records.map((record) => (
-            <Col xs={6} md={4} xl={3} key={record.id} className="d-flex justify-content-center mb-5 mt-2">
-        <Category {...record}/>
-        </Col>
-  )) : "ther are no Category"
   return (
     <Container>
-      <Row>
-        {categoriesList}
-      </Row>
+      <Loading status={loading} error={error}>
+        <GridList records={records} rendarItem={(record) =>  <Category {...record}/>} />
+      </Loading>
     </Container>
   )
 }
