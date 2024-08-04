@@ -9,7 +9,7 @@ import { Container } from "react-bootstrap"
 function Categories() {
   const dispatch = useAppDispatch()
 
-  const {loading, error, records} = useAppSelector(state => state.categoriesSlice)
+  const {loading, error, records} = useAppSelector(state => state.categories)
 
   useEffect(()=> {
     if (!records.length){

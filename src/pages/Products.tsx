@@ -12,7 +12,7 @@ function Products() {
   const params = useParams() 
   const dispatch = useAppDispatch()
 
-  const {records, loading, error} = useAppSelector(state => state.productsSlice)
+  const {records, loading, error} = useAppSelector(state => state.products)
 
 useEffect(()=> {
   dispatch(actGetProductsByCatPrefix(params.prefix as string))
