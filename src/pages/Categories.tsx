@@ -1,4 +1,5 @@
 import GridList from "@components/common/GridList/GridList"
+import Heading from "@components/common/Heading/Heading"
 import { Category } from "@components/eCommerce"
 import Loading from "@components/feedback/Loading/Loading"
 import { actGetCategories } from "@store/categories/categoriesSlice"
@@ -19,6 +20,9 @@ function Categories() {
 
   return (
     <Container>
+          <Heading>
+            Categories
+          </Heading>
       <Loading status={loading} error={error}>
         <GridList records={records} rendarItem={(record) =>  <Category {...record}/>} />
       </Loading>
